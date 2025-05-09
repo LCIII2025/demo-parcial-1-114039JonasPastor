@@ -1,6 +1,7 @@
 package tup.lciii.modelo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Mesa {
     private final ArrayList<Carta> mesa;
@@ -51,5 +52,7 @@ public class Mesa {
      */
 
     public void vaciarMesa(Mazo mazo) {
-        //TODO
+        //TODO-
+        mesa.removeAll(getMesa());
+    }
 }

@@ -31,7 +31,8 @@ public class Juego {
     }
 
     public int getCantidadJugadores() {
-        //TODO
+        //TODO-
+        return jugadores.size();
     }
 
     public int getPuntajeMaximo() {
@@ -44,7 +45,17 @@ public class Juego {
      * @param nombresDeJugadores Una lista de nombres de jugadores.
      */
     public void iniciarJugadores(ArrayList<String> nombresDeJugadores) {
-        //TODO
+        //TODO-
+        for(int i = 0; i < getCantidadJugadores(); i++){
+            String nombre = nombresDeJugadores.get(i);
+            Jugador jugador;
+            if(jugadores.isEmpty()){
+                jugador = new Jugador(nombre,true);
+            } else{
+                jugador = new Jugador(nombre,false);
+            }
+            jugadores.add(jugador);
+        }
     }
 
     public void iniciarMazo() {
@@ -60,7 +71,11 @@ public class Juego {
      * @see Mazo#mezclarMazo()
      */
     public void mezclarMazoYrepartirCartas() {
-        //TODO
+        //TODO-
+        mazo.mezclarMazo();
+        for(Jugador jugador: jugadores){
+            mazo.repartirCartas(jugador);
+        }
     }
 
     /**
